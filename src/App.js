@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import movieData from './movieData';
 
 function App() {
   return (
