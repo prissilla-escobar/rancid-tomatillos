@@ -7,9 +7,7 @@ function Movies({movies}) {
       <Card 
         id={movie.id}
         poster_path={movie.poster_path}
-        backdrop_path={movie.backdrop_path}
         title={movie.title}
-        average_rating={movie.average_rating}
         release_date={movie.release_date}
         key={movie.id}
       />
@@ -17,9 +15,7 @@ function Movies({movies}) {
   })
   return (
     <div className='movies-container'>
-      <section className='show-movies'>
         {movieCards}
-      </section>
     </div>
   )
 }
