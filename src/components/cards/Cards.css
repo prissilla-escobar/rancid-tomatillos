@@ -1,27 +1,16 @@
-/* .movies-container {
-  grid-template-columns: repeat(4,1fr);
-  margin-top: 28.5%;
-  font-size:small
-} */
-
-.show-movies {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.movies-container {
-  display: flex;
-  justify-content: center;
-  background-color: white;
-}
-
 .card {
-  display: grid;
-  column-gap: 12px;
-  background-color: white;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-bottom: 48px;
-  min-height: 90vh;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.movie-poster {
+  height: 250px;
+}
+
+.movie-poster:hover {
+  transform: translate(0rem, -1.3ex);
+  box-shadow: 0 0 5px 4px rgb(221, 70, 70);
+  cursor: pointer;
+  height: 275px;
 }
