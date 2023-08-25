@@ -1,0 +1,27 @@
+/* .movies-container {
+  grid-template-columns: repeat(4,1fr);
+  margin-top: 28.5%;
+  font-size:small
+} */
+
+.show-movies {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.movies-container {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.card {
+  display: grid;
+  column-gap: 12px;
+  background-color: white;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 48px;
+  min-height: 90vh;
+}
