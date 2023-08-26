@@ -16,10 +16,14 @@ function App() {
     setSelectedMovie(singleMovie)
   }
   
+  function showMovies() {
+    setSelectedMovie(false)
+  }
+
   return (
     <div className="App">
       {!selectedMovie && <Movies showSelectedMovie={showSelectedMovie} movies={movies}/>}
-      {selectedMovie && <SelectedMovie selectedMovie={selectedMovie}/>}
+      {selectedMovie && <SelectedMovie selectedMovie={selectedMovie} showMovies={showMovies}/>}
     </div>
   );
 }
