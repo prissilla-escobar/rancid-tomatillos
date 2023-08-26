@@ -2,9 +2,7 @@
 import './SelectedMovie.css'
 
 function SelectedMovieCard(props) {
-    console.log(props)
     const dayjs = require('dayjs')
-
     return (
       <div className="card">
         <div>
@@ -14,6 +12,8 @@ function SelectedMovieCard(props) {
         <div>
             {props.title}<br />
             {dayjs(props.release_date).format('MMMM YYYY')}
+            {props.overview}
+            <iframe className='trailer' src= {`https://www.youtube.com/embed/${props.trailerKey}`}></iframe>
         </div>
         <button className="back-button" onClick={() => {props.showMovies()}}>Back</button>
       </div>
