@@ -1,0 +1,35 @@
+.backdrop {
+  width: 100%;
+  filter:blur(8px)
+}
+
+.back-button {
+  cursor: pointer;
+  display: inline-block;  
+  height: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  position: relative;
+  line-height: 2.5em;
+  padding-left: 1em;
+  padding-right: 2em;
+  background: white;
+  color: black;
+}
+.back-button::after {
+ /* // triangle hover color */
+ border-left: 20px solid white;
+}
+
+.back-button::after {
+  /* // the triangle */
+  content: "";
+  position: absolute;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+  height: 0px;
+  width: 0px;
+  margin-right: -20px;
+  right: 0; 
+}
+
