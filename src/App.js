@@ -4,13 +4,22 @@ import movieData from './movieData';
 import Card from './components/cards/Cards'
 import { useState } from 'react';
 import Movies from './components/movies/Movies';
+import SelectedMovie from './components/selectedMovie/SelectedMovie';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
   const [movies, setMovies] = useState(movieData)
+  const [selectedMovie, setSelectedMovie] = useState(false)
+
+  function showSelectedMovie(id) {
+    const singleMovie = movieData.movies.find(movie => movie.id === id)
+    setSelectedMovie(singleMovie)
+  }
   
   return (
     <div className="App">
-      <Movies movies={movies}/>
+      {!selectedMovie && <Movies showSelectedMovie={showSelectedMovie} movies={movies}/>}
+      {selectedMovie && <SelectedMovie selectedMovie={selectedMovie}/>}
     </div>
   );
 }
