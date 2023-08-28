@@ -20,10 +20,10 @@ function App() {
       })
     }, [])
 
-  useEffect(() => {
-    getVideoData(id)
-    .then(vidData => setTrailerKey(vidData))
-  })
+  // useEffect(() => {
+  //   getVideoData(id)
+  //   .then(vidData => setTrailerKey(vidData))
+  // })
 
   function showSelectedMovie(id) {
     const singleMovie = movies.find(movie => movie.id === id)
