@@ -25,6 +25,6 @@ function Movies({movies, showSelectedMovie}) {
 export default Movies;
 
 Movies.propTypes = {
-  movies: PropTypes.object.isRequired,
+  movies: PropTypes.array.isRequired,
   showSelectedMovie: PropTypes.func.isRequired
 }
