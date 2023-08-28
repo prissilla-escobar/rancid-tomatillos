@@ -1,8 +1,7 @@
 import './SelectedMovie.css'
 import SelectedMovieCard from './SelectedMovieCard'
 
-function SelectedMovie({selectedMovie, showMovies}) {
-    console.log('SELMOVIE', selectedMovie)
+function SelectedMovie({selectedMovie, showMovies, trailerKey}) {
    return (
     <div className='single-movie-container'>
        <SelectedMovieCard 
@@ -18,9 +17,7 @@ function SelectedMovie({selectedMovie, showMovies}) {
         runtime={selectedMovie.runtime}
         overview={selectedMovie.overview}
         showMovies={showMovies}
-        trailerKey={selectedMovie.key}
-        // goBack={goBack}
-        // displayVideo={displayVideo}
+        trailerKey={trailerKey}
       />
     </div>
    )
