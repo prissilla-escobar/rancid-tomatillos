@@ -13,7 +13,7 @@ function SelectedMovieCard(props) {
             {props.title}<br />
             {dayjs(props.release_date).format('MMMM YYYY')}
             {props.overview}
-            <iframe className='trailer' src= {`https://www.youtube.com/embed/${props.trailerKey}`}></iframe>
+            <iframe className='trailer' src={`https://www.youtube.com/embed/${props.trailerKey}`}></iframe>
         </div>
         <button className="back-button" onClick={() => {props.showMovies()}}>Back</button>
       </div>
