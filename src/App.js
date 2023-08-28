@@ -1,6 +1,5 @@
 // import logo from './logo.svg';
 import './App.css';
-// import movieData from './movieData';
 import Card from './components/cards/Cards'
 import { useState, useEffect } from 'react';
 import Movies from './components/movies/Movies';
