@@ -1,4 +1,5 @@
 import './Cards.css'
+import PropTypes from 'prop-types'
 
 function Card(props) {
   return (
@@ -9,3 +10,9 @@ function Card(props) {
 }
 
 export default Card;
+
+Card.propTypes = {
+  id: PropTypes.number.isRequired,
+  poster_path: PropTypes.string.isRequired,
+  showSelectedMovie: PropTypes.func.isRequired
+}
