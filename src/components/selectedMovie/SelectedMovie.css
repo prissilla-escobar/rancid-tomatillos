@@ -1,24 +1,29 @@
 .backdrop {
   width: 100%;
-  filter:blur(8px)
+  /* filter:blur(8px) */
+  opacity: .45;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .back-button {
   cursor: pointer;
   display: inline-block;  
   height: 40px;
-  margin-left: 40px;
   margin-right: 40px;
+  margin-left: 40px;
   position: relative;
   line-height: 2.5em;
-  padding-left: 1em;
-  padding-right: 2em;
-  background: white;
+  padding-right: 1em;
+  padding-left: 2em;
+  background: rgb(215, 32, 32);
   color: black;
 }
 .back-button::after {
  /* // triangle hover color */
- border-left: 20px solid white;
+ border-right: 22px solid rgb(215, 32, 32);
 }
 
 .back-button::after {
@@ -29,7 +34,33 @@
   border-top: 20px solid transparent;
   height: 0px;
   width: 0px;
-  margin-right: -20px;
-  right: 0; 
+  margin-left: -24px;
+  left: 0; 
 }
 
+/* .App {
+  display: flex;
+} */
+
+.selected-movie-card {
+  width: 100%;
+  min-height: 96vh;
+  background-color: white;
+  color: black
+
+}
+
+.single-movie-container {
+  height: 100%;
+  width: 100%;
+}
+
+.selected-movie-container {
+  display: flex;
+  align-items: center;
+  margin: 48px;
+}
+
+.selected-movie-poster {
+  height: 400px;
+}
