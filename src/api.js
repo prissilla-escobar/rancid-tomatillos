@@ -29,5 +29,3 @@ export function getVideoData(id) {
   .then(data => data.videos.find(video => video.type === 'Trailer'))
   .then(video => video.key)
 }
-
-// export default getAllMovies, getSelectedMovieData
