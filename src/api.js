@@ -14,7 +14,6 @@ export function getSelectedMovieData(id) {
       if (!response.ok) {
         throw new Error('Movie not found.')
       }
-      console.log('grabbing data')
       return response.json()
     })
 }
