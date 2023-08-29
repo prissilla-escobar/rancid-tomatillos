@@ -3,7 +3,7 @@ import './SelectedMovie.css'
 import PropTypes from 'prop-types'
 
 function SelectedMovieCard(props) {
-  console.log(props.overview)
+  // console.log(props.overview)
     const dayjs = require('dayjs')
     return (
       <div className="card">
@@ -29,7 +29,7 @@ function SelectedMovieCard(props) {
     backdrop_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     release_date: PropTypes.string.isRequired,
-    // overview: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
     trailerKey: PropTypes.string.isRequired,
     showMovies: PropTypes.func.isRequired
   } 

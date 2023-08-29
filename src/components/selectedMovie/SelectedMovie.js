@@ -3,6 +3,7 @@ import SelectedMovieCard from './SelectedMovieCard'
 import PropTypes from 'prop-types'
 
 function SelectedMovie({selectedMovie, showMovies, trailerKey}) {
+  console.log(typeof selectedMovie.overview)
    return (
     <div className='single-movie-container'>
        <SelectedMovieCard 

@@ -8,6 +8,7 @@ import {getAllMovies, getSelectedMovieData, getVideoData} from './api';
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
+  // const dummy = [{id: 1, movie_id: 1, key:"SUXWAEX2jlg", site: "YouTube", type:"Trailer"}]
   const [movies, setMovies] = useState([])
   const [selectedMovie, setSelectedMovie] = useState(false)
   const [trailerKey, setTrailerKey] = useState('')
@@ -21,7 +22,6 @@ function App() {
 
   function showSelectedMovie(id) {
     const singleMovie = movies.find(movie => movie.id === id)
-    setSelectedMovie(singleMovie)
     getSelectedMovieData(id).then(data => setSelectedMovie(data.movie))
     getVideoData(id).then(vidData => setTrailerKey(vidData))
   }
