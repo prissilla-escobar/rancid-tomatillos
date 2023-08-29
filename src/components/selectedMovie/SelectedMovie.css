@@ -1,66 +1,52 @@
-.backdrop {
-  width: 100%;
-  /* filter:blur(8px) */
-  opacity: .45;
+body, #root, .App {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.back-button {
-  cursor: pointer;
-  display: inline-block;  
-  height: 40px;
-  margin-right: 40px;
-  margin-left: 40px;
-  position: relative;
-  line-height: 2.5em;
-  padding-right: 1em;
-  padding-left: 2em;
-  background: rgb(215, 32, 32);
-  color: black;
-}
-.back-button::after {
- /* // triangle hover color */
- border-right: 22px solid rgb(215, 32, 32);
-}
-
-.back-button::after {
-  /* // the triangle */
-  content: "";
-  position: absolute;
-  border-bottom: 20px solid transparent;
-  border-top: 20px solid transparent;
-  height: 0px;
-  width: 0px;
-  margin-left: -24px;
-  left: 0; 
-}
-
-/* .App {
-  display: flex;
-} */
-
-.selected-movie-card {
   width: 100%;
-  min-height: 96vh;
-  background-color: white;
-  color: black
-
+  color: white;
+  font-weight: bold;
 }
 
 .single-movie-container {
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.back-button {
+  cursor: pointer;
+  height: 60px;
+  margin-left: 20px
 }
 
 .selected-movie-container {
   display: flex;
   align-items: center;
-  margin: 48px;
+  margin: 25px;
+  width: 90%;
 }
 
 .selected-movie-poster {
-  height: 400px;
+  height: 300px;
+  margin-right: 10px;
+}
+
+.selected-movie-poster-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+h1, h3, p {
+  margin: 5px;
+  align-items: center;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+iframe {
+  aspect-ratio: 16/9;
 }
