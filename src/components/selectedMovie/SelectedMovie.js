@@ -1,5 +1,6 @@
 import './SelectedMovie.css'
 import SelectedMovieCard from './SelectedMovieCard'
+import PropTypes from 'prop-types'
 
 
 function SelectedMovie({selectedMovie, showMovies, trailerKey}) {
@@ -26,3 +27,9 @@ function SelectedMovie({selectedMovie, showMovies, trailerKey}) {
 }
 
 export default SelectedMovie
+
+SelectedMovie.propTypes = {
+  selectedMovie: PropTypes.object.isRequired,
+  showMovies: PropTypes.func.isRequired,
+  trailerKey: PropTypes.string.isRequired
+}

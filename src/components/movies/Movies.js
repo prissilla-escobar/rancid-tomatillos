@@ -1,5 +1,6 @@
 import Card from '../cards/Cards'
 import './Movies.css'
+import PropTypes from 'prop-types'
 
 function Movies({movies, showSelectedMovie}) {
   const movieCards = movies.map(movie => {
@@ -22,3 +23,8 @@ function Movies({movies, showSelectedMovie}) {
 }
 
 export default Movies;
+
+Movies.propTypes = {
+  movies: PropTypes.array.isRequired,
+  showSelectedMovie: PropTypes.func.isRequired
+}
