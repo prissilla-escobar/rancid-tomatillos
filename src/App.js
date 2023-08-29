@@ -15,7 +15,7 @@ function App() {
   const [movies, setMovies] = useState([])
   const [selectedMovie, setSelectedMovie] = useState(false)
   const [trailerKey, setTrailerKey] = useState('')
-  const [serverError, setServerError] = useState(false)
+  const [serverError, setServerError] = useState({hasError: false, message: ''})
 
   useEffect(() => {
     getAllMovies() 
@@ -23,7 +23,7 @@ function App() {
         return setMovies(data.movies)
       })
       .catch(error => {
-        setServerError(error.message)
+        setServerError({hasError: true, message: `${error.message}`})
       })
     }, [])
 
@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      {serverError && <ServerError serverError={serverError} />}
+      {serverError.hasError && <ServerError serverError={serverError} />}
       {!selectedMovie && <Movies showSelectedMovie={showSelectedMovie} movies={movies}/>}
       {selectedMovie && <SelectedMovie selectedMovie={selectedMovie} showMovies={showMovies} trailerKey={trailerKey}/>}
     </div>
