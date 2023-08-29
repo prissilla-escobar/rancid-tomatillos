@@ -1,25 +1,32 @@
 
 import './SelectedMovie.css'
 import PropTypes from 'prop-types'
+import rewindImage from '../../images/rewind-button (1).png'
 
 function SelectedMovieCard(props) {
-  // console.log(props.overview)
+
     const dayjs = require('dayjs')
     return (
-      <div className="selected-movie-card">
-        <div className="backdrop" style={{backgroundImage:`url(${props.backdrop_path})`}}>
-
-            <div className='selected-movie-container'>
-                <img src={props.poster_path} className="selected-movie-poster"></img>
-                <div className='movie-info'>
-                  <h2 className='movie-title'>{props.title} {dayjs(props.release_date).format('MMMM YYYY')}</h2>
-                  <p>{props.overview}</p>
-                </div>
-                <iframe className='trailer' src= {`https://www.youtube.com/embed/${props.trailerKey}`}></iframe>
+      <div className='selected-movie-card'>
+        <div className='selected-movie-container'>
+          <img className='back-button' src={rewindImage} onClick={() => {props.showMovies()}}></img>
+          <div className='selected-movie-poster-container'>
+            <img src={props.poster_path} className="selected-movie-poster"></img>
+            <div className='movie-info'>
+              <h1 className='movie-title'>{props.title}</h1>
+              <div className='release-year'>
+                <h3>({dayjs(props.release_date).format('YYYY')})</h3>
+              </div>
+              <h3 className='rating'>
+                Average Rating: {props.average_rating.toFixed(1) * 10}% &#127813;
+              </h3>
+              <p className='overview'>
+                {props.overview}
+              </p>
             </div>
-            <button className="back-button" onClick={() => {props.showMovies()}}>Back</button>
+          </div>
+          <iframe className='trailer' src= {`https://www.youtube.com/embed/${props.trailerKey}`}></iframe>
         </div>
-        
       </div>
     )
   }

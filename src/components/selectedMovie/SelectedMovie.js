@@ -6,7 +6,8 @@ import PropTypes from 'prop-types'
 function SelectedMovie({selectedMovie, showMovies, trailerKey}) {
 
    return (
-    <div className='single-movie-container'>
+    <div className='single-movie-container' style={{backgroundImage:`url(${selectedMovie.backdrop_path}`,   backgroundSize:'cover'}}>
+
        <SelectedMovieCard 
         key={selectedMovie.id}
         id={selectedMovie.id}
