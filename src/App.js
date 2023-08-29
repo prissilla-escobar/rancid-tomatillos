@@ -6,17 +6,24 @@ import { useState, useEffect } from 'react';
 import Movies from './components/movies/Movies';
 import SelectedMovie from './components/selectedMovie/SelectedMovie';
 import {getAllMovies, getSelectedMovieData, getVideoData} from './api';
+import ServerError from './components/serverError/ServerError';
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
+  const dummyData = [{id: 1, movie_id: 1, key:"SUXWAEX2jlg", site: "YouTube", type:"Trailer"}]
+
   const [movies, setMovies] = useState([])
   const [selectedMovie, setSelectedMovie] = useState(false)
   const [trailerKey, setTrailerKey] = useState('')
+  const [serverError, setServerError] = useState(false)
 
   useEffect(() => {
     getAllMovies() 
       .then(data => {
         return setMovies(data.movies)
+      })
+      .catch(error => {
+        setServerError(error.message)
       })
     }, [])
 
@@ -33,6 +40,7 @@ function App() {
 
   return (
     <div className="App">
+      {serverError && <ServerError serverError={serverError} />}
       {!selectedMovie && <Movies showSelectedMovie={showSelectedMovie} movies={movies}/>}
       {selectedMovie && <SelectedMovie selectedMovie={selectedMovie} showMovies={showMovies} trailerKey={trailerKey}/>}
     </div>
