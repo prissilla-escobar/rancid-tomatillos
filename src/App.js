@@ -20,16 +20,11 @@ function App() {
       })
     }, [])
 
-  // useEffect(() => {
-  //   getVideoData(id)
-  //   .then(vidData => setTrailerKey(vidData))
-  // })
-
   function showSelectedMovie(id) {
     const singleMovie = movies.find(movie => movie.id === id)
     setSelectedMovie(singleMovie)
     getSelectedMovieData(id).then(data => setSelectedMovie(data.movie))
-
+    getVideoData(id).then(vidData => setTrailerKey(vidData))
   }
   
   function showMovies() {
@@ -39,7 +34,7 @@ function App() {
   return (
     <div className="App">
       {!selectedMovie && <Movies showSelectedMovie={showSelectedMovie} movies={movies}/>}
-      {selectedMovie && <SelectedMovie selectedMovie={selectedMovie} showMovies={showMovies}/>}
+      {selectedMovie && <SelectedMovie selectedMovie={selectedMovie} showMovies={showMovies} trailerKey={trailerKey}/>}
     </div>
   );
 }
