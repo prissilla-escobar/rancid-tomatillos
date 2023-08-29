@@ -1,7 +1,9 @@
 import './SelectedMovie.css'
 import SelectedMovieCard from './SelectedMovieCard'
 
+
 function SelectedMovie({selectedMovie, showMovies, trailerKey}) {
+
    return (
     <div className='single-movie-container'>
        <SelectedMovieCard 
