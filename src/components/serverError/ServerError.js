@@ -2,9 +2,10 @@ import './ServerError.css'
 import PropTypes from 'prop-types'
 
 function ServerError ({ serverError }) {
+    console.log({serverError})
     return (
         <div className="serverError">
-            <div>{serverError}</div>
+            <div>{serverError.message}</div>
         </div>
     )
 }
