@@ -1,0 +1,11 @@
+header {
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.rancid-logo {
+    height: 125px;
+    margin-top: 15px;
+}
