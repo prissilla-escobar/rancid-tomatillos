@@ -6,6 +6,7 @@ import Movies from './components/movies/Movies';
 import SelectedMovie from './components/selectedMovie/SelectedMovie';
 import {getAllMovies, getSelectedMovieData, getVideoData} from './api';
 import ServerError from './components/serverError/ServerError';
+import Header from './components/headers/Header.js'
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       {serverError.hasError && <ServerError serverError={serverError} />}
       {!selectedMovie && <Movies showSelectedMovie={showSelectedMovie} movies={movies}/>}
       {selectedMovie && <SelectedMovie selectedMovie={selectedMovie} showMovies={showMovies} trailerKey={trailerKey}/>}
