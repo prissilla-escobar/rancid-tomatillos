@@ -27,6 +27,7 @@ function App() {
   function showSelectedMovie(id) {
     const singleMovie = movies.find(movie => movie.id === id)
     getSelectedMovieData(id).then(data => setSelectedMovie(data.movie))
+    console.log(setTrailerKey)
     getVideoData(id).then(vidData => setTrailerKey(vidData))
   }
   
