@@ -18,6 +18,10 @@ body, #root, .App {
   margin-left: 20px
 }
 
+.back-button:hover {
+  height: 75px;
+}
+
 .selected-movie-container {
   display: flex;
   align-items: center;
@@ -47,7 +51,7 @@ h1, h2, p {
   width: 45%;
   background-color: rgba(50, 50, 50, .45);
   border-radius: 6px;
-  padding-bottom: 15px;
+  padding: 15px;
 }
 
 iframe {
