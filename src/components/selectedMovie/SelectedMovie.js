@@ -30,7 +30,11 @@ function SelectedMovie({selectedMovie, showMovies, trailerKey}) {
 export default SelectedMovie
 
 SelectedMovie.propTypes = {
-  selectedMovie: PropTypes.object.isRequired,
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.number.isRequired
+    })
+  ),
   showMovies: PropTypes.func.isRequired,
   trailerKey: PropTypes.string.isRequired
 }
