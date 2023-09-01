@@ -1,10 +1,12 @@
 import Card from '../cards/Cards'
 import './Movies.css'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 function Movies({movies, showSelectedMovie}) {
   const movieCards = movies.map(movie => {
     return (
+      <Link to={`/${movie.id}`} key={movie.id}>
       <Card 
         id={movie.id}
         poster_path={movie.poster_path}
@@ -13,6 +15,7 @@ function Movies({movies, showSelectedMovie}) {
         key={movie.id}
         showSelectedMovie={showSelectedMovie}
       />
+      </Link>
     )
   })
   return (

@@ -7,7 +7,7 @@ import SelectedMovie from './components/selectedMovie/SelectedMovie';
 import {getAllMovies, getSelectedMovieData, getVideoData} from './api';
 import ServerError from './components/serverError/ServerError';
 import Header from './components/headers/Header.js'
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 
 function App() {
   const [movies, setMovies] = useState([])
@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     getAllMovies() 
       .then(data => {
-        return setMovies(data.movies)
+        setMovies(data.movies)
       })
       .catch(error => {
         setServerError({hasError: true, message: `${error.message}`})
@@ -39,9 +39,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {serverError.hasError && <ServerError serverError={serverError} />}
-      {!selectedMovie && <Movies showSelectedMovie={showSelectedMovie} movies={movies}/>}
-      {selectedMovie && <SelectedMovie selectedMovie={selectedMovie} showMovies={showMovies} trailerKey={trailerKey}/>}
+        <Routes>
+          {serverError.hasError && <ServerError serverError={serverError} />}
+          <Route path='/' element={<Movies showSelectedMovie={showSelectedMovie} movies={movies}/>} />
+          <Route path='/:movieId' element={<SelectedMovie selectedMovie={selectedMovie} showMovies={showMovies} trailerKey={trailerKey} />} />
+        </Routes>
     </div>
   );
 }
