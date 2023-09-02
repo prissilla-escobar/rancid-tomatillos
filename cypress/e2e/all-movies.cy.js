@@ -17,13 +17,13 @@ describe("home page user flow", () => {
   it('should display all movie posters', () => {
     cy.get('.movies-container').children()
       .should('have.length', 5)
-    cy.get(':nth-child(1) > .movie-poster')
+      .get(':nth-child(1) > .movie-poster')
       .should('have.attr', 'alt')
     // cy.contains('.movie-title', 'Black Adam')
   })
 
   it('should update url to clicked movie details', () => {
-    cy.get(':nth-child(1) > .movie-poster').click()
+    cy.get('.card').first().click()
       .url().should('eq', 'http://localhost:3000/436270')
   })
 
