@@ -3,7 +3,7 @@ import './Movies.css'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-function Movies({movies, showSelectedMovie}) {
+function Movies({movies}) {
   const movieCards = movies.map(movie => {
     return (
       <Link to={`/${movie.id}`} key={movie.id}>
@@ -13,7 +13,6 @@ function Movies({movies, showSelectedMovie}) {
         title={movie.title}
         release_date={movie.release_date}
         key={movie.id}
-        showSelectedMovie={showSelectedMovie}
       />
       </Link>
     )
@@ -29,5 +28,4 @@ export default Movies;
 
 Movies.propTypes = {
   movies: PropTypes.array.isRequired,
-  showSelectedMovie: PropTypes.func.isRequired
 }
