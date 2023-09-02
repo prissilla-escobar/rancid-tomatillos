@@ -1,18 +1,14 @@
-// import logo from './logo.svg';
 import './App.css';
-import Card from './components/cards/Cards'
 import { useState, useEffect } from 'react';
 import Movies from './components/movies/Movies';
-import SelectedMovie from './components/selectedMovie/SelectedMovie';
-import {getAllMovies, getSelectedMovieData, getVideoData} from './api';
+import { getAllMovies } from './api';
 import ServerError from './components/serverError/ServerError';
 import Header from './components/headers/Header.js'
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import SelectedMovieCard from '../src/components/selectedMovie/SelectedMovieCard'
 
 function App() {
   const [movies, setMovies] = useState([])
-  const [selectedMovie, setSelectedMovie] = useState(false)
-  const [trailerKey, setTrailerKey] = useState('')
   const [serverError, setServerError] = useState({hasError: false, message: ''})
 
   useEffect(() => {
@@ -25,24 +21,13 @@ function App() {
       })
     }, [])
 
-  function showSelectedMovie(id) {
-    const singleMovie = movies.find(movie => movie.id === id)
-    getSelectedMovieData(id).then(data => setSelectedMovie(data.movie))
-    console.log(setTrailerKey)
-    getVideoData(id).then(vidData => setTrailerKey(vidData))
-  }
-  
-  function showMovies() {
-    setSelectedMovie(false)
-  }
-
   return (
     <div className="App">
       <Header />
         <Routes>
           {serverError.hasError && <ServerError serverError={serverError} />}
-          <Route path='/' element={<Movies showSelectedMovie={showSelectedMovie} movies={movies}/>} />
-          <Route path='/:movieId' element={<SelectedMovie selectedMovie={selectedMovie} showMovies={showMovies} trailerKey={trailerKey} />} />
+          <Route path='/' element={<Movies movies={movies} setServerError={setServerError} />} />
+          <Route path='/:movieId' element={<SelectedMovieCard  setServerError={setServerError}  />} />
         </Routes>
     </div>
   );
