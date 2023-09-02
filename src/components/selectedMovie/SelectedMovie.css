@@ -54,6 +54,61 @@ h1, h2, p {
   padding: 15px;
 }
 
-iframe {
-  aspect-ratio: 16/9;
+@media screen and (max-width: 1075px) {
+  .selected-movie-container {
+    flex-direction: column;
+  }
+  .back-button {
+    height: 55px;
+    margin-left: -18em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .selected-movie-poster-container {
+    flex-direction: column;
+  }
+  .trailer {
+    width: 100%;
+  }
+  .selected-movie-poster {
+    height: 200px;
+  }
+  h1,h2,p {
+    font-size: small;
+    /* width: 0%; */
+  }
+  .movie-info {
+    width: auto;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 598px) {
+  .back-button {
+    height: 30px;
+    margin-left: -1rem;
+    margin-bottom: 40px;
+  }
+  .back-button:hover {
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .back-button {
+    margin-left: -12rem;
+    margin-bottom: 25px;
+  }
+  .selected-movie-poster {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .back-button {
+    height: 30px;
+    margin-left: -1rem;
+    margin-bottom: 5px;
+  }
 }
