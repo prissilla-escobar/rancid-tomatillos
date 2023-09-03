@@ -1,8 +1,8 @@
-import './App.css';
-import { useState, useEffect } from 'react';
-import Movies from './components/movies/Movies';
-import { getAllMovies } from './api';
-import ServerError from './components/serverError/ServerError';
+import './App.css'
+import { useState, useEffect } from 'react'
+import Movies from './components/movies/Movies'
+import { getAllMovies } from './api'
+import ServerError from './components/serverError/ServerError'
 import Header from './components/headers/Header.js'
 import { Routes, Route } from 'react-router-dom'
 import SelectedMovieCard from '../src/components/selectedMovie/SelectedMovieCard'
@@ -21,16 +21,20 @@ function App() {
       })
     }, [])
 
+    function resetError() {
+      setServerError(false)
+    }
+
   return (
     <div className="App">
       <Header />
+      {serverError.hasError && <ServerError serverError={serverError} resetError={resetError} />}
         <Routes>
-          {serverError.hasError && <ServerError serverError={serverError} />}
-          <Route path='/' element={<Movies movies={movies} setServerError={setServerError} />} />
+          <Route path='/' element={<Movies movies={movies} />} />
           <Route path='/:movieId' element={<SelectedMovieCard  setServerError={setServerError}  />} />
         </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

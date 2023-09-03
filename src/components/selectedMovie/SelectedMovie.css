@@ -27,6 +27,11 @@ body, #root, .App {
   align-items: center;
   margin: 25px;
   width: 90%;
+  height: 80%;
+}
+
+.selected-movie-card {
+  height: 80%;
 }
 
 .selected-movie-poster {

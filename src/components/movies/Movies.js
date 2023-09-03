@@ -17,6 +17,7 @@ function Movies({movies}) {
       </Link>
     )
   })
+
   return (
     <div className='movies-container'>
         {movieCards}
@@ -24,7 +25,7 @@ function Movies({movies}) {
   )
 }
 
-export default Movies;
+export default Movies
 
 Movies.propTypes = {
   movies: PropTypes.array.isRequired,

@@ -10,7 +10,7 @@ function Card(props) {
   )
 }
 
-export default Card;
+export default Card
 
 Card.propTypes = {
   id: PropTypes.number.isRequired,

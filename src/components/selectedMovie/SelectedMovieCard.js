@@ -2,7 +2,7 @@ import './SelectedMovie.css'
 import rewindImage from '../../images/rewind-button (1).png'
 import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { getSelectedMovieData, getVideoData } from '../../api';
+import { getSelectedMovieData, getVideoData } from '../../api'
 
 function SelectedMovieCard({setServerError}) {
     const dayjs = require('dayjs')
@@ -21,8 +21,8 @@ function SelectedMovieCard({setServerError}) {
           .then(key => setTrailerKey(key))
           .catch(e => setTrailerKey(''))
       }, [])
-
-    return (
+  
+    return selectedMovie && (
       <div className='single-movie-container' style={{backgroundImage:`url(${selectedMovie.backdrop_path}`,   backgroundSize:'cover'}}>
         <div className='selected-movie-card'>
           <div className='selected-movie-container'>
@@ -30,7 +30,7 @@ function SelectedMovieCard({setServerError}) {
               <img className='back-button' alt='back button' src={rewindImage}></img>
             </Link>
             <div className='selected-movie-poster-container'>
-              <img src={selectedMovie.poster_path} className="selected-movie-poster" alt={`movie poster for the movie titled ${selectedMovie.title}`}></img>
+              <img src={selectedMovie.poster_path} className="selected-movie-poster" alt={`movie poster for the movie titled ${selectedMovie.title}`} />
               <div className='movie-info'>
                 <h1 className='movie-title'>{selectedMovie.title}</h1>
                 <div className='release-year'>
@@ -52,4 +52,4 @@ function SelectedMovieCard({setServerError}) {
     )
   }
   
-  export default SelectedMovieCard;
+  export default SelectedMovieCard
