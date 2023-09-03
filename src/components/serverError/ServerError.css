@@ -1,8 +1,13 @@
 .serverError {
     font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: red;
     padding: 24px;
     height: 100%;
     width: 100%;
-    background-color: rgb(57, 102, 176)
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-image: url('https://media.istockphoto.com/id/1276915790/photo/portrait-of-frustrated-little-boy.jpg?s=612x612&w=0&k=20&c=CftP5DauXd8QXkni1nBkQ_o_zyavffeOPAk1TIgdjbE=');
 }
