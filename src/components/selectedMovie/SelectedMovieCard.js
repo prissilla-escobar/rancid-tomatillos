@@ -21,8 +21,8 @@ function SelectedMovieCard({setServerError}) {
           .then(key => setTrailerKey(key))
           .catch(e => setTrailerKey(''))
       }, [])
-
-    return (
+  
+    return selectedMovie && (
       <div className='single-movie-container' style={{backgroundImage:`url(${selectedMovie.backdrop_path}`,   backgroundSize:'cover'}}>
         <div className='selected-movie-card'>
           <div className='selected-movie-container'>
