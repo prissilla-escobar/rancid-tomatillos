@@ -21,12 +21,16 @@ function App() {
       })
     }, [])
 
+    function resetError() {
+      setServerError(false)
+    }
+
   return (
     <div className="App">
       <Header />
+      {serverError.hasError && <ServerError serverError={serverError} resetError={resetError} />}
         <Routes>
-          {serverError.hasError && <ServerError serverError={serverError} />}
-          <Route path='/' element={<Movies movies={movies} setServerError={setServerError} />} />
+          <Route path='/' element={<Movies movies={movies} />} />
           <Route path='/:movieId' element={<SelectedMovieCard  setServerError={setServerError}  />} />
         </Routes>
     </div>
