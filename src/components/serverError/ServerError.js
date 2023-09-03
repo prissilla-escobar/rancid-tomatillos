@@ -1,11 +1,15 @@
+import { Link } from 'react-router-dom'
 import './ServerError.css'
 import PropTypes from 'prop-types'
 
-function ServerError ({ serverError }) {
-    console.log({serverError})
+function ServerError ({ serverError, resetError }) {
+
     return (
         <div className="serverError">
-            <div>{serverError.message}</div>
+            <p>{serverError.message}</p>
+            <Link to={'/'} onClick={() => {resetError()}}>
+                <text>"Please Return Home"</text>
+            </Link>
         </div>
     )
 }
@@ -13,5 +17,6 @@ function ServerError ({ serverError }) {
 export default ServerError
 
 ServerError.propTypes = {
-    serverError: PropTypes.string.isRequired
+    serverError: PropTypes.string.isRequired,
+    resetError: PropTypes.func.isRequired
 }
