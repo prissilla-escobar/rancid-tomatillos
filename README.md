@@ -13,11 +13,11 @@ To view more details about a movie, users are able to click on a movie to see al
 - Network requests.
 
 ## MOBILE VIEW:
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/aliceabarca/Desktop/Screenshot%202023-09-02%20at%2010.04.56%20PM.png?version%3D1693713947322)
+![Screenshot 2023-09-02 at 10 04 56 PM](https://github.com/prissilla-escobar/rancid-tomatillos/assets/123991375/45dabf38-8015-47bd-819e-8a4e34311852)
 
 ## PREVIEW:
 
-[giphy](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2wyeGJhMWRieTdwODJ3eWF5YWJiYzh6Z28xZnJwbXBzMzBiNW03OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4JMAU4GjN2n73vZaxi/giphy.gif)
+![giphy](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2wyeGJhMWRieTdwODJ3eWF5YWJiYzh6Z28xZnJwbXBzMzBiNW03OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4JMAU4GjN2n73vZaxi/giphy.gif)
 
 ## INSTALLATION: 
 1. `Fork` this Repository [rancid-romatillos](https://github.com/prissilla-escobar/rancid-tomatillos)
@@ -28,7 +28,7 @@ To view more details about a movie, users are able to click on a movie to see al
 - `npm start`
 4. Once the modules have finished compiling, enter http://localhost:3000/ into your browser to see the live web page.
 
-## CONTRIBUTERS:
+## CONTRIBUTORS:
 - [Prissilla Escobar](https://github.com/prissilla-escobar)
 - [Alice Abarca](https://github.com/aliceabarca)
 
